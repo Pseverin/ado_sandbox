@@ -7,6 +7,10 @@ pool:
 variables:
 - name: a
   value: a
+- name: a-a
+  value: a-a
+- name: a_a
+  value: a_a
 
 steps:
   - task: Bash@3
@@ -27,3 +31,41 @@ steps:
       targetType: 'inline'
       script: |
         echo ${{ variables['a'] }}
+
+  - task: Bash@3
+    displayName: bash1
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo ${{ variables.a-a }}
+  - task: Bash@3
+    displayName: bash2
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo $(a-a)
+  - task: Bash@3
+    displayName: bash3
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo ${{ variables['a-a'] }}
+
+  - task: Bash@3
+    displayName: bash1
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo ${{ variables.a_a }}
+  - task: Bash@3
+    displayName: bash2
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo $(a_a)
+  - task: Bash@3
+    displayName: bash3
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo ${{ variables['a_a'] }}

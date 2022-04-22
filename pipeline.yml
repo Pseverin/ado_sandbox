@@ -4,10 +4,18 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  a: 'a'
+  b_b: 'b_b'
+  c-c: 'c-c'
+
 steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: echo $MYSECRET
-  env:
-    MYSECRET: DynamoChampion1927
+    script: |
+        echo $a
+        echo $b_b
+        echo $c-c
+        echo $(c-c)
+        echo ${c-c}

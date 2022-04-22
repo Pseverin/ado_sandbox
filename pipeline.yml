@@ -11,13 +11,13 @@ variables:
 
 steps:
   - task: Bash@3
-    description: ${{ variables.a }}
+    displayName: ${{ variables.a }}
     inputs:
       targetType: 'inline'
       script: |
         echo ${{ variables.a }}
   - task: Bash@3
-    description: $(a)
+    displayName: $(a)
     inputs:
       targetType: 'inline'
       script: |

@@ -32,12 +32,12 @@ steps:
       script: |
         echo ${{ variables['a'] }}
 
-  - task: Bash@3
-    displayName: bash1
-    inputs:
-      targetType: 'inline'
-      script: |
-        echo ${{ variables.a-a }}
+#  - task: Bash@3
+#    displayName: bash1
+#    inputs:
+#      targetType: 'inline'
+#      script: |
+#        echo ${{ variables.a-a }}
   - task: Bash@3
     displayName: bash2
     inputs:

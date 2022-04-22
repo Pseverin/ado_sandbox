@@ -17,3 +17,9 @@ steps:
         echo $(variables.a)
         echo $[variables.a]
         echo ${{ variables.a }}
+        echo $(variables["a"])
+        echo $[variables["a"]]
+        echo ${{ variables["a"] }}
+        echo $(a)
+        echo $[a]
+        echo ${{ a }}

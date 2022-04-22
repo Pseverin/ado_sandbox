@@ -6,19 +6,30 @@ pool:
 
 variables:
   a: 'a'
-  b_b: 'b_b'
-  c-c: 'c-c'
+  b: 'echo DynamoKyiv'
 
 steps:
   - task: Bash@3
-    displayName: ${{ variables.a }}
+    displayName: bash1
     inputs:
       targetType: 'inline'
       script: |
         echo ${{ variables.a }}
   - task: Bash@3
-    displayName: $(a)
+    displayName: bash2
     inputs:
       targetType: 'inline'
       script: |
         echo $(a)
+  - task: Bash@3
+    displayName: bash3
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo ${{ variables['a'] }}
+  - task: Bash@3
+    displayName: bash4
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo $[variables.b]

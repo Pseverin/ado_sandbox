@@ -14,8 +14,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-        echo $variables.a
-        echo $variables.b_b
-        echo $variables.c-c
-        echo $(variables.c-c)
-        echo ${variables.c-c}
+        echo $(variables.a)
+        echo $[variables.a]
+        echo ${{ variables.a }}

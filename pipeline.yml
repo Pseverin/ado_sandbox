@@ -5,8 +5,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  a: 'a'
-  b: 'echo DynamoKyiv'
+- name: a
+  value: a
 
 steps:
   - task: Bash@3
@@ -32,4 +32,4 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        echo $[variables.b]
+        echo ${{ variables["a"] }}

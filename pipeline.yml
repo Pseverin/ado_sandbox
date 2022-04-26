@@ -32,6 +32,11 @@ stages:
             targetType: 'inline'
             script: pwd
         - task: Bash@3
+          displayName: "Test echo"
+          inputs:
+            targetType: 'inline'
+            script: echo $(variables['notebook-workspace-path'])
+        - task: Bash@3
           displayName: "Deploy Databricks Notebook"
           inputs:
             filePath: test.sh

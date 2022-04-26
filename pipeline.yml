@@ -35,12 +35,12 @@ stages:
           displayName: "Test echo"
           inputs:
             targetType: 'inline'
-            script: echo $(variables['notebook-workspace-path'])
+            script: echo $(notebook-workspace-path)
         - task: Bash@3
           displayName: "Deploy Databricks Notebook"
           inputs:
             filePath: test.sh
-            arguments: $(variables['var1']) $(variables['var2'])
-            workingDirectory: $(variables['notebook-workspace-path'])
+            arguments: $(var1) $(var2)
+            workingDirectory: $(notebook-workspace-path)
           env:
-            ENV_VAR_SECRET: $(variables['env-var'])
+            ENV_VAR_SECRET: $(env-var)
